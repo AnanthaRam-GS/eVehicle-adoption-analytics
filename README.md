@@ -72,6 +72,34 @@ The analysis is performed using **Python**, with libraries such as Pandas, NumPy
 
 ---
 
+## Team Members and Roles
+
+- **Project Manager / Scrum Master**: Kalyani H Karuvelli  
+- **Data Engineer**: Anantha Ram G S  
+- **Data Analyst**: Ravindran G  
+- **Machine Learning Engineer**: Akshay R  
+- **Business Analyst**: Nitin R S  
+
+---
+
+## Expected Outcomes
+
+- Identification of key drivers and barriers influencing EV adoption
+- Insights into EV model performance and resale behavior
+- Understanding of the relationship between EV market trends and stock performance
+- Data-driven recommendations for policymakers, manufacturers, and investors
+
+---
+
+## References
+
+Relevant academic literature and industry reports on EV adoption, infrastructure, market dynamics, and financial performance are referenced in the project proposal document.
+
+---
+
+## Disclaimer
+
+This project is conducted strictly for **academic purposes** as part of a Business Analytics capstone. All datasets used are publicly available, and survey responses are anonymized.
 
 
 ## 📂 Repository Structure
