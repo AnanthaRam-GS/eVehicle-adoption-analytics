@@ -96,11 +96,3 @@ The analysis is performed using **Python**, with libraries such as Pandas, NumPy
 Relevant academic literature and industry reports on EV adoption, infrastructure, market dynamics, and financial performance are referenced in the project proposal document.
 
 ---
-
-## Disclaimer
-
-This project is conducted strictly for **academic purposes** as part of a Business Analytics capstone. All datasets used are publicly available, and survey responses are anonymized.
-
-
-## 📂 Repository Structure
-
