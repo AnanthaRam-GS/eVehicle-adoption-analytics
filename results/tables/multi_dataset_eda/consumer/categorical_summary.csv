@@ -1,0 +1,14 @@
+column,unique_values,most_frequent_value,most_frequent_count
+Gender,2,Male,68033
+Item Purchased,25,Blouse,4470
+Category,4,Clothing,44740
+Location,50,Idaho,2434
+Size,4,M,44958
+Color,25,Olive,4595
+Season,4,Spring,25712
+Subscription Status,2,No,73010
+Shipping Type,6,Free Shipping,17540
+Discount Applied,2,No,57014
+Promo Code Used,2,No,56987
+Payment Method,6,PayPal,17524
+Frequency of Purchases,7,Every 3 Months,15168

@@ -1,0 +1,3 @@
+column,q1,q3,iqr,outlier_count
+year,2016.0,2022.0,6.0,0
+ev_sales,1.0,2500.0,2499.0,3171

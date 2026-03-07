@@ -1,0 +1,5 @@
+column,dtype,non_null,null_count,null_pct,n_unique
+country,int64,38219,0,0.0,10
+latitude,float64,38219,0,0.0,37905
+longitude,float64,38219,0,0.0,37996
+charging_points,int64,38219,0,0.0,70

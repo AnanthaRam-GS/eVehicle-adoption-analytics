@@ -1,0 +1,26 @@
+column,unique_values,most_frequent_value,most_frequent_count
+IsRecentlyVerified,2,False,24963
+DateLastVerified,7677,2022-08-23T10:36:00Z,616
+UUID,38219,1EEE7687-00C9-4A6B-A693-52AC07E9CD6E,1
+Connections,38195,[],25
+DateLastStatusUpdate,7677,2022-08-23T10:36:00Z,616
+DateCreated,8540,2015-05-03T00:54:00Z,791
+AddressInfo.Title,36016,Shell Recharge/Ubitricity,264
+AddressInfo.AddressLine1,35813,,285
+AddressInfo.Town,11196,,4292
+AddressInfo.StateOrProvince,682,,18319
+AddressInfo.Postcode,23619,,4416
+AddressInfo.AddressLine2,1760,,36277
+AddressInfo.RelatedURL,1102,,20641
+UsageCost,675,,30780
+GeneralComments,1239,,34584
+AddressInfo.ContactTelephone1,2182,,25468
+AddressInfo.ContactTelephone2,46,,38126
+AddressInfo.AccessComments,2322,,29482
+AddressInfo.ContactEmail,64,,38126
+DataProvidersReference,26030,,10042
+DatePlanned,141,,37793
+country_code,10,US,5000
+OperatorsReference,5388,,32556
+DateLastConfirmed,1,,38218
+MetadataValues,7257,,30962

@@ -1,0 +1,10 @@
+column,dtype,non_null,null_count,null_pct,n_unique
+Date,str,3356,0,0.0,1258
+Open,float64,3356,0,0.0,3198
+High,float64,3356,0,0.0,3228
+Low,float64,3356,0,0.0,3234
+Close,float64,3356,0,0.0,3202
+Volume,int64,3356,0,0.0,3352
+Dividends,float64,3356,0,0.0,2
+Stock Splits,float64,3356,0,0.0,4
+Company,str,3356,0,0.0,3

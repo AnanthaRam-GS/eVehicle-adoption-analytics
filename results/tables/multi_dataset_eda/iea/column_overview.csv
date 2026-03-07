@@ -1,0 +1,6 @@
+column,dtype,non_null,null_count,null_pct,n_unique
+region,str,2975,0,0.0,52
+parameter,str,2975,0,0.0,2
+powertrain,str,2975,0,0.0,3
+year,int64,2975,0,0.0,17
+value,float64,2975,0,0.0,525

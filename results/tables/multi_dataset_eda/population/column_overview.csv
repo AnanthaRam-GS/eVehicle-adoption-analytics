@@ -1,0 +1,6 @@
+column,dtype,non_null,null_count,null_pct,n_unique
+model year,int64,714,0,0.0,22
+make,str,714,0,0.0,47
+model,str,714,0,0.0,185
+electric vehicle type,str,714,0,0.0,2
+vehicle_count,int64,714,0,0.0,384

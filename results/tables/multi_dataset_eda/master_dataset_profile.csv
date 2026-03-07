@@ -1,0 +1,7 @@
+dataset,rows,columns,duplicate_rows,missing_cells
+iea,2975,5,261,0
+sales,16436,3,2037,0
+population,714,5,0,0
+charging,38219,4,158,0
+stock,3356,9,0,0
+survey,325,41,3,1803

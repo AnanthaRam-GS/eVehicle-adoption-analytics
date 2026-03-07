@@ -1,0 +1,8 @@
+column,n_unique,mode,mode_count
+country_of_residence,10,India,217
+annual_income_range_(in_local_currency_equivalent)_please_refer_your_country's_avg._national_income,4,Above average national income,118
+occupation,5,Salaried employee,207
+what_type_of_vehicle_do_you_currently_own,4,Petrol / Diesel,238
+"if_you_own_an_ev,_mention_your_ev_brand",25,none,183
+important_factors_when_choosing_an_ev,23,Price;Driving range;Charging speed;Brand;Design & comfort,72
+primary_reason_for_resale___consideration,6,not_applicable,211

@@ -1,0 +1,4 @@
+column,dtype,non_null,null_count,null_pct,n_unique
+region_country,str,16436,0,0.0,63
+year,int64,16436,0,0.0,16
+ev_sales,float64,16436,0,0.0,1060
