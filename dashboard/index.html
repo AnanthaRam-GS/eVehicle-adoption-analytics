@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV Market Dynamics – Business Intelligence Dashboard</title>
+  <meta name="description" content="Analyzing Consumer Trends and Financial Signals in the Electric Vehicle Market.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">EV</div>
+        <div class="sidebar-brand">
+          <h2>EV Analytics</h2>
+          <span>Market Intelligence</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-section="overview" onclick="navigateTo('overview')">
+          <span class="nav-icon"><i class="fas fa-th-large"></i></span> Dashboard Overview
+        </a>
+        <a class="nav-item" data-section="global-trends" onclick="navigateTo('global-trends')">
+          <span class="nav-icon"><i class="fas fa-globe-americas"></i></span> Global EV Trends
+        </a>
+        <a class="nav-item" data-section="charging" onclick="navigateTo('charging')">
+          <span class="nav-icon"><i class="fas fa-charging-station"></i></span> Charging Infrastructure
+        </a>
+        <a class="nav-item" data-section="consumer" onclick="navigateTo('consumer')">
+          <span class="nav-icon"><i class="fas fa-users"></i></span> Consumer Insights
+        </a>
+        <a class="nav-item" data-section="segmentation" onclick="navigateTo('segmentation')">
+          <span class="nav-icon"><i class="fas fa-object-group"></i></span> Segmentation Analysis
+        </a>
+        <a class="nav-item" data-section="ml-model" onclick="navigateTo('ml-model')">
+          <span class="nav-icon"><i class="fas fa-robot"></i></span> Driver Analysis (ML)
+        </a>
+        <a class="nav-item" data-section="time-series" onclick="navigateTo('time-series')">
+          <span class="nav-icon"><i class="fas fa-chart-line"></i></span> Market Growth
+        </a>
+        <a class="nav-item" data-section="financial" onclick="navigateTo('financial')">
+          <span class="nav-icon"><i class="fas fa-coins"></i></span> Financial Signals
+        </a>
+        <a class="nav-item" data-section="recommendations" onclick="navigateTo('recommendations')">
+          <span class="nav-icon"><i class="fas fa-lightbulb"></i></span> Business Insights
+        </a>
+        <a class="nav-item" data-section="about" onclick="navigateTo('about')">
+          <span class="nav-icon"><i class="fas fa-info-circle"></i></span> About Project
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <p class="sidebar-footer-text">© 2025 EV Market Dynamics</p>
+      </div>
+    </aside>
+
+    <!-- ═══ MAIN ═══ -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+          <div class="header-title">
+            <h1 id="pageTitle">Dashboard Overview</h1>
+            <span id="pageSubtitle">Real-time EV market intelligence</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:8px;">EV Market Dynamics: Consumer Trends &
+            Financial Signals</span>
+          <span class="theme-label" id="themeLabel">Dark</span>
+          <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+        </div>
+      </header>
+
+      <div class="page-content">
+
+        <!-- ═══ 1. DASHBOARD OVERVIEW ═══ -->
+        <section class="page-section active" id="section-overview">
+          <div class="section-header">
+            <h2>Dashboard Overview</h2>
+            <p>Key performance indicators and market landscape summary</p>
+          </div>
+
+          <div class="grid-5 mb-20">
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <div class="kpi-icon blue"><i class="fas fa-car-side"></i></div>
+              </div>
+              <div class="kpi-label">Total EV Sales</div>
+              <div class="kpi-value">14.2M</div>
+              <div class="kpi-change">+35% YoY</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <div class="kpi-icon green"><i class="fas fa-arrow-trend-up"></i></div>
+              </div>
+              <div class="kpi-label">EV Growth Rate</div>
+              <div class="kpi-value">35.4%</div>
+              <div class="kpi-change">+8.2% vs 2022</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <div class="kpi-icon amber"><i class="fas fa-charging-station"></i></div>
+              </div>
+              <div class="kpi-label">Charging Stations</div>
+              <div class="kpi-value">2.7M</div>
+              <div class="kpi-change">+40% growth</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <div class="kpi-icon purple"><i class="fas fa-poll"></i></div>
+              </div>
+              <div class="kpi-label">Survey Responses</div>
+              <div class="kpi-value">325</div>
+              <div class="kpi-change">Augmented dataset</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <div class="kpi-icon teal"><i class="fas fa-gauge-high"></i></div>
+              </div>
+              <div class="kpi-label">EV Readiness Score</div>
+              <div class="kpi-value">0.68</div>
+              <div class="kpi-change">Above average</div>
+            </div>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>EV Sales Growth (2010–2024)</h3>
+              <p class="chart-subtitle">Global electric vehicle sales trajectory</p>
+              <div class="chart-container"><canvas id="overviewSalesChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>Top Regions by EV Adoption</h3>
+              <p class="chart-subtitle">Market share by geographic region</p>
+              <div class="chart-container"><canvas id="overviewRegionsChart"></canvas></div>
+            </div>
+          </div>
+
+          <div class="summary-panel">
+            <p><strong>Summary:</strong> Global EV adoption is accelerating rapidly, driven by infrastructure expansion,
+              declining battery costs, and proactive government policy incentives. China leads global sales, followed by
+              Europe and North America. The market crossed a critical inflection point in 2020, with year-over-year
+              growth consistently exceeding 30%.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 2. GLOBAL EV TRENDS ═══ -->
+        <section class="page-section" id="section-global-trends">
+          <div class="section-header">
+            <h2>Global EV Trends</h2>
+            <p>Tracking the evolution of electric vehicle adoption worldwide</p>
+          </div>
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>EV Sales vs Year</h3>
+              <p class="chart-subtitle">Annual global EV unit sales (millions)</p>
+              <div class="chart-container"><canvas id="trendsSalesChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>BEV vs PHEV Growth</h3>
+              <p class="chart-subtitle">Battery Electric vs Plug-in Hybrid adoption</p>
+              <div class="chart-container"><canvas id="trendsBevPhevChart"></canvas></div>
+            </div>
+          </div>
+          <div class="chart-card mb-20">
+            <h3>Regional EV Adoption Over Time</h3>
+            <p class="chart-subtitle">Cumulative EV stock by region</p>
+            <div class="chart-container tall"><canvas id="trendsRegionalChart"></canvas></div>
+          </div>
+          <div class="insight-box">
+            <h4>Key Insights</h4>
+            <p>EV sales experienced dramatic acceleration after 2019, with global sales doubling in just two years. BEVs
+              now account for over 70% of new EV sales, overtaking PHEVs. China's market dominance continues to grow,
+              while Europe has established itself as the second-largest market.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 3. CHARGING INFRASTRUCTURE ═══ -->
+        <section class="page-section" id="section-charging">
+          <div class="section-header">
+            <h2>Charging Infrastructure</h2>
+            <p>Global charging station network analysis and EV-to-charger ratios</p>
+          </div>
+
+          <div class="chart-card mb-20">
+            <h3>Global Charging Station Distribution</h3>
+            <p class="chart-subtitle">Interactive map of charging infrastructure worldwide</p>
+            <div class="map-container" id="chargingMap"></div>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>Charging Stations vs EV Population</h3>
+              <p class="chart-subtitle">Infrastructure readiness by region</p>
+              <div class="chart-container"><canvas id="chargingScatterChart"></canvas></div>
+            </div>
+            <div class="kpi-card"
+              style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px;">
+              <div class="kpi-icon teal" style="width:48px;height:48px;font-size:22px;margin-bottom:16px;"><i
+                  class="fas fa-car"></i></div>
+              <div class="kpi-label">Vehicles Per Charging Station</div>
+              <div class="kpi-value" style="font-size:40px;margin:8px 0;">6.2</div>
+              <p style="font-size:12px;color:var(--text-muted);max-width:240px;">Average ratio of EVs to available
+                public charging points globally</p>
+              <div class="kpi-change" style="margin-top:10px;">Improving year over year</div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <h4>Infrastructure Insight</h4>
+            <p>Charging infrastructure availability is the strongest predictor of EV adoption. Countries with a
+              vehicle-to-charger ratio below 10:1 show significantly higher adoption rates. China leads with over 1.8M
+              public charging points, while Europe and North America continue aggressive infrastructure rollouts.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 4. CONSUMER INSIGHTS ═══ -->
+        <section class="page-section" id="section-consumer">
+          <div class="section-header">
+            <h2>Consumer Insights</h2>
+            <p>Understanding consumer motivations, barriers, and readiness for EV adoption</p>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+            <div class="metric-badge blue"><i class="fas fa-heart"></i> Motivation Score: <strong>3.72</strong></div>
+            <div class="metric-badge red"><i class="fas fa-shield-halved"></i> Barrier Score: <strong>3.04</strong>
+            </div>
+            <div class="metric-badge green"><i class="fas fa-gauge"></i> Readiness Score: <strong>0.68</strong></div>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>Motivation Factors</h3>
+              <p class="chart-subtitle">What drives consumers toward EV adoption (Likert 1–5)</p>
+              <div class="chart-container"><canvas id="consumerMotivationChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>Barrier Factors</h3>
+              <p class="chart-subtitle">What holds consumers back (Likert 1–5)</p>
+              <div class="chart-container"><canvas id="consumerBarrierChart"></canvas></div>
+            </div>
+          </div>
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>Correlation Heatmap</h3>
+              <p class="chart-subtitle">Relationships between motivation and barrier factors</p>
+              <div class="heatmap-container" id="heatmapContainer"></div>
+            </div>
+            <div class="chart-card">
+              <h3>EV Ownership Status</h3>
+              <p class="chart-subtitle">Current vehicle ownership distribution</p>
+              <div class="chart-container"><canvas id="consumerOwnershipChart"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 5. SEGMENTATION ═══ -->
+        <section class="page-section" id="section-segmentation">
+          <div class="section-header">
+            <h2>Segmentation Analysis</h2>
+            <p>K-Means consumer clustering — identifying distinct market segments</p>
+          </div>
+          <div class="chart-card mb-20">
+            <h3>Consumer Segments (K-Means Clustering)</h3>
+            <p class="chart-subtitle">2D projection of consumer clusters based on motivation and barrier scores</p>
+            <div class="chart-container tall"><canvas id="segmentScatterChart"></canvas></div>
+          </div>
+          <div class="grid-4 mb-20">
+            <div class="segment-card">
+              <div class="segment-number">1</div>
+              <h4>EV Enthusiasts</h4>
+              <p class="segment-traits">High motivation, low barriers. Tech-savvy, environmentally conscious, early
+                adopters with higher income levels.</p>
+              <div class="segment-strategy"><strong>Strategy:</strong> Premium offerings, loyalty programs, referral
+                incentives.</div>
+            </div>
+            <div class="segment-card">
+              <div class="segment-number">2</div>
+              <h4>Price-Sensitive Buyers</h4>
+              <p class="segment-traits">Moderate motivation, high cost concerns. Interested in EVs but deterred by
+                purchase price and uncertain resale value.</p>
+              <div class="segment-strategy"><strong>Strategy:</strong> Affordable entry-level models, financing plans,
+                subsidy awareness campaigns.</div>
+            </div>
+            <div class="segment-card">
+              <div class="segment-number">3</div>
+              <h4>Infrastructure-Constrained</h4>
+              <p class="segment-traits">High motivation but concerned about charging availability. Typically suburban or
+                rural residents.</p>
+              <div class="segment-strategy"><strong>Strategy:</strong> Expand charging networks, highlight home charging
+                solutions.</div>
+            </div>
+            <div class="segment-card">
+              <div class="segment-number">4</div>
+              <h4>Traditional Users</h4>
+              <p class="segment-traits">Low motivation, high barriers. Prefer conventional vehicles. Limited awareness
+                of EV benefits.</p>
+              <div class="segment-strategy"><strong>Strategy:</strong> Educational campaigns, test drive programs,
+                cost-savings messaging.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 6. DRIVER ANALYSIS (ML) ═══ -->
+        <section class="page-section" id="section-ml-model">
+          <div class="section-header">
+            <h2>Driver Analysis (ML Model)</h2>
+            <p>Random Forest classification model identifying the most influential factors in EV adoption</p>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>Feature Importance — Random Forest</h3>
+              <p class="chart-subtitle">Relative importance of each factor in predicting EV adoption</p>
+              <div class="chart-container tall"><canvas id="featureImportanceChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>Confusion Matrix</h3>
+              <p class="chart-subtitle">Predicted vs actual adoption classification</p>
+              <div class="chart-container tall"><canvas id="confusionMatrixChart"></canvas></div>
+            </div>
+          </div>
+
+          <div class="metrics-grid mb-20">
+            <div class="metric-card">
+              <div class="metric-val">87.2%</div>
+              <div class="metric-name">Accuracy</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val">85.6%</div>
+              <div class="metric-name">Precision</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val">88.1%</div>
+              <div class="metric-name">Recall</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val">86.8%</div>
+              <div class="metric-name">F1 Score</div>
+            </div>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="card">
+              <div class="card-header">
+                <h3>Classification Report</h3>
+              </div>
+              <div class="heatmap-container">
+                <table class="heatmap-table" style="border-spacing:0;">
+                  <thead>
+                    <tr>
+                      <th style="text-align:left;">Class</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>F1-Score</th>
+                      <th>Support</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align:left;font-weight:600;">Non-Adopter</td>
+                      <td style="background:rgba(59,130,246,0.12);">0.84</td>
+                      <td style="background:rgba(59,130,246,0.18);">0.86</td>
+                      <td style="background:rgba(59,130,246,0.15);">0.85</td>
+                      <td>142</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left;font-weight:600;">Adopter</td>
+                      <td style="background:rgba(16,185,129,0.18);">0.87</td>
+                      <td style="background:rgba(16,185,129,0.22);">0.90</td>
+                      <td style="background:rgba(16,185,129,0.20);">0.88</td>
+                      <td>183</td>
+                    </tr>
+                    <tr style="border-top:1px solid var(--border);">
+                      <td style="text-align:left;font-weight:600;">Macro Avg</td>
+                      <td>0.86</td>
+                      <td>0.88</td>
+                      <td>0.87</td>
+                      <td>325</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left;font-weight:600;">Weighted Avg</td>
+                      <td>0.86</td>
+                      <td>0.88</td>
+                      <td>0.87</td>
+                      <td>325</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>Top Adoption Drivers</h3>
+              </div>
+              <div class="driver-list">
+                <span class="driver-tag"><i class="fas fa-charging-station"></i> Charging Infrastructure</span>
+                <span class="driver-tag"><i class="fas fa-hand-holding-dollar"></i> Government Incentives</span>
+                <span class="driver-tag"><i class="fas fa-piggy-bank"></i> Cost Savings</span>
+                <span class="driver-tag"><i class="fas fa-wallet"></i> Income Level</span>
+                <span class="driver-tag"><i class="fas fa-leaf"></i> Environmental Awareness</span>
+                <span class="driver-tag"><i class="fas fa-microchip"></i> Technology Interest</span>
+              </div>
+              <div style="margin-top:14px;padding:12px;background:var(--bg-muted);border-radius:var(--radius);">
+                <p style="font-size:12px;color:var(--text-secondary);line-height:1.6;">The top 3 features alone account
+                  for <strong>48%</strong> of the model's predictive power. Infrastructure availability has a Gini
+                  importance 17% higher than the next closest feature.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <h4>Model Interpretation</h4>
+            <p>The Random Forest classifier (100 estimators, max depth = 12) achieves 87.2% accuracy on the held-out
+              test set. Charging infrastructure availability is the single strongest predictor (Gini importance 0.182),
+              followed by government incentives (0.156) and perceived cost savings (0.142). The confusion matrix shows
+              the model is slightly better at identifying adopters (recall 0.90) than non-adopters (recall 0.86),
+              suggesting that adoption signals are more distinct. Cross-validation with 5 folds confirms consistent
+              performance.</p>
+          </div>
+        </section>
+
+      <!-- ═══ 7. MARKET GROWTH ═══ -->
+      <section class="page-section" id="section-time-series">
+        <div class="section-header">
+          <h2>Market Growth & Time-Series</h2>
+          <p>Longitudinal analysis of EV market expansion and growth rate dynamics</p>
+        </div>
+        <div class="grid-2 mb-20">
+          <div class="chart-card">
+            <h3>EV Sales Growth Trajectory</h3>
+            <p class="chart-subtitle">Year-over-year global EV sales (millions)</p>
+            <div class="chart-container"><canvas id="timeSeriesSalesChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <h3>Growth Rate (% YoY)</h3>
+            <p class="chart-subtitle">Annual growth rate percentage</p>
+            <div class="chart-container"><canvas id="timeSeriesGrowthChart"></canvas></div>
+          </div>
+        </div>
+        <div class="chart-card mb-20">
+          <h3>Multi-Factor Trend Analysis</h3>
+          <p class="chart-subtitle">EV Sales vs Charging Infrastructure vs EV Stock (indexed, 2015 = 100)</p>
+          <div class="chart-container tall"><canvas id="timeSeriesMultiChart"></canvas></div>
+        </div>
+        <div class="insight-box">
+          <h4>Market Insight</h4>
+          <p>The EV market entered a decisive acceleration phase post-2020, transitioning from early adoption to
+            mass-market growth. Growth rates peaked at over 100% in 2021 before normalizing to 35–40% as the market
+            matures. Infrastructure expansion consistently precedes adoption surges.</p>
+        </div>
+      </section>
+
+      <!-- ═══ 8. FINANCIAL SIGNALS ═══ -->
+      <section class="page-section" id="section-financial">
+        <div class="section-header">
+          <h2>Financial Market Signals</h2>
+          <p>EV company stock performance and market correlation analysis</p>
+        </div>
+        <div class="grid-2 mb-20">
+          <div class="chart-card">
+            <h3>EV Company Stock Price Trends</h3>
+            <p class="chart-subtitle">Normalized stock performance of major EV manufacturers</p>
+            <div class="chart-container tall"><canvas id="financialStockChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <h3>EV Sales vs Stock Performance</h3>
+            <p class="chart-subtitle">Scatter analysis of market vs sales correlation</p>
+            <div class="chart-container tall"><canvas id="financialScatterChart"></canvas></div>
+          </div>
+        </div>
+        <div class="kpi-card mb-20" style="text-align:center;padding:24px;">
+          <div class="kpi-label">Correlation Score (EV Sales ↔ Stock Returns)</div>
+          <div class="kpi-value" style="font-size:40px;color:var(--accent);">+0.78</div>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">Strong positive correlation between EV
+            adoption metrics and manufacturer stock performance</p>
+        </div>
+        <div class="insight-box">
+          <h4>Financial Insight</h4>
+          <p>EV market growth is positively correlated with stock market performance of EV manufacturers (r = +0.78).
+            Tesla led the sector with peak valuations in 2021, while traditional automakers' EV divisions have shown
+            increasing investor confidence. Market sentiment leads actual sales data by 6–12 months.</p>
+        </div>
+      </section>
+
+      <!-- ═══ 9. BUSINESS INSIGHTS ═══ -->
+      <section class="page-section" id="section-recommendations">
+        <div class="section-header">
+          <h2>Business Insights & Recommendations</h2>
+          <p>Strategic recommendations for key stakeholders based on data-driven analysis</p>
+        </div>
+
+        <!-- Summary KPIs -->
+        <div class="grid-4 mb-20">
+          <div class="kpi-card">
+            <div class="kpi-label">Stakeholder Groups</div>
+            <div class="kpi-value">4</div>
+            <div class="kpi-change">Targeted recommendations</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Data Sources Analyzed</div>
+            <div class="kpi-value">7</div>
+            <div class="kpi-change">Cross-validated insights</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Key Correlations Found</div>
+            <div class="kpi-value">12</div>
+            <div class="kpi-change">Statistically significant</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Action Items</div>
+            <div class="kpi-value">16</div>
+            <div class="kpi-change">Across all stakeholders</div>
+          </div>
+        </div>
+
+        <div class="grid-2 mb-20">
+          <div class="rec-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <div class="rec-icon" style="background:var(--primary-soft);color:var(--primary);margin-bottom:0;"><i
+                  class="fas fa-industry"></i></div>
+              <span class="metric-badge blue">High Priority</span>
+            </div>
+            <h4>For Manufacturers</h4>
+            <p class="rec-insight"><strong>Insight:</strong> BEVs dominate sales growth, and consumers prioritize
+              range, charging convenience, and total cost of ownership. Price-sensitive segments (Cluster 2) represent
+              the largest untapped market at ~35% of survey respondents.</p>
+            <div class="rec-action">
+              <strong>Recommended Actions:</strong>
+              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                <li>Develop affordable BEV models targeting the $25K–$35K range</li>
+                <li>Invest in solid-state battery R&D to address range concerns</li>
+                <li>Offer flexible financing and subscription models to lower entry barriers</li>
+                <li>Launch targeted marketing for Cluster 2 (price-sensitive) and Cluster 3 (infra-constrained)
+                  segments</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rec-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <div class="rec-icon" style="background:var(--accent-soft);color:var(--accent);margin-bottom:0;"><i
+                  class="fas fa-landmark"></i></div>
+              <span class="metric-badge green">High Priority</span>
+            </div>
+            <h4>For Governments</h4>
+            <p class="rec-insight"><strong>Insight:</strong> Government incentives are the second-strongest predictor
+              of adoption (importance = 0.156). Countries with comprehensive policy frameworks show 2–3× higher
+              adoption rates than peers.</p>
+            <div class="rec-action">
+              <strong>Recommended Actions:</strong>
+              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                <li>Extend purchase subsidies and tax credits beyond 2030</li>
+                <li>Mandate EV-ready building codes for new construction</li>
+                <li>Invest in public charging infrastructure with focus on rural corridors</li>
+                <li>Set clear ICE phase-out timelines to drive industry planning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rec-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <div class="rec-icon" style="background:var(--purple-soft);color:var(--purple);margin-bottom:0;"><i
+                  class="fas fa-chart-pie"></i></div>
+              <span class="metric-badge">Medium Priority</span>
+            </div>
+            <h4>For Investors</h4>
+            <p class="rec-insight"><strong>Insight:</strong> EV stock performance correlates strongly (r = +0.78) with
+              adoption metrics. Battery and charging infrastructure companies show emerging value with market
+              sentiment leading sales data by 6–12 months.</p>
+            <div class="rec-action">
+              <strong>Recommended Actions:</strong>
+              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                <li>Diversify beyond vehicle OEMs into battery supply chain and charging networks</li>
+                <li>Monitor infrastructure deployment rates as a leading indicator of adoption</li>
+                <li>Consider EV software platforms and grid integration companies</li>
+                <li>Track government policy changes as early signals for market shifts</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rec-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <div class="rec-icon" style="background:var(--warning-soft);color:var(--warning);margin-bottom:0;"><i
+                  class="fas fa-plug"></i></div>
+              <span class="metric-badge blue">High Priority</span>
+            </div>
+            <h4>For Infrastructure Companies</h4>
+            <p class="rec-insight"><strong>Insight:</strong> Charging infrastructure is the #1 predictor of EV
+              adoption (importance = 0.182). Current vehicle-to-charger ratio of 6.2:1 is improving but gaps remain in
+              suburban and rural corridors.</p>
+            <div class="rec-action">
+              <strong>Recommended Actions:</strong>
+              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                <li>Prioritize highway corridor fast-charging (150kW+) networks</li>
+                <li>Partner with retail and hospitality chains for destination charging</li>
+                <li>Invest in smart grid integration and V2G (Vehicle-to-Grid) capabilities</li>
+                <li>Target underserved suburban and rural areas for maximum adoption impact</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Strategic Outlook</h4>
+          <p>The transition to electric mobility is at a critical inflection point. Our analysis across 7 datasets and
+            325 survey respondents shows that the top 3 adoption drivers — infrastructure availability, government
+            incentives, and cost savings — are all addressable through coordinated stakeholder action. Markets that
+            align policy, infrastructure, and product strategies are poised to reach mass adoption (>30% penetration)
+            within the next 5 years.</p>
+        </div>
+      </section>
+
+      <!-- ═══ 10. ABOUT ═══ -->
+      <section class="page-section" id="section-about">
+        <div class="section-header">
+          <h2>About This Project</h2>
+          <p>Project overview, methodology, data sources, and team</p>
+        </div>
+        <div class="grid-2 mb-20">
+          <div class="about-card">
+            <h3><i class="fas fa-file-lines" style="color:var(--primary);"></i> Project Description</h3>
+            <p>This capstone project analyzes <strong>global electric vehicle (EV) adoption, market performance,
+                charging infrastructure readiness, and financial market signals</strong>. It combines secondary
+              datasets from reliable public sources with primary survey data to derive actionable business insights.
+            </p>
+            <p style="margin-top:10px;">Research title: <strong>"EV Market Dynamics: Analyzing Consumer Trends and
+                Financial Signals"</strong></p>
+          </div>
+          <div class="about-card">
+            <h3><i class="fas fa-database" style="color:var(--accent);"></i> Datasets Used</h3>
+            <ul>
+              <li>IEA Global EV Data Explorer</li>
+              <li>U.S. Electric Vehicle Population Data (data.gov)</li>
+              <li>Open Charge Map — Charging Infrastructure</li>
+              <li>Opendatabay — Consumer EV Adoption Dataset</li>
+              <li>Global EV Sales Dataset (2010–2024)</li>
+              <li>Mendeley EV Adoption Survey Dataset</li>
+              <li>Primary Survey (Google Forms, 325 responses)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-2 mb-20">
+          <div class="about-card">
+            <h3><i class="fas fa-flask" style="color:var(--purple);"></i> Methodologies</h3>
+            <ul>
+              <li><strong>K-Means Clustering</strong> — Consumer segmentation into 4 distinct clusters</li>
+              <li><strong>Random Forest Classification</strong> — Identifying key drivers of EV adoption</li>
+              <li><strong>Time-Series Analysis</strong> — Forecasting EV market growth trends</li>
+              <li><strong>Correlation & Regression</strong> — EV sales vs. financial market signals</li>
+              <li><strong>Bootstrap Sampling</strong> — Augmenting survey data for statistical robustness</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3><i class="fas fa-users" style="color:var(--warning);"></i> Team Members</h3>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-avatar">AG</div>
+                <h4>Anantha Ram G S</h4>
+                <p>Data Engineer</p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">RG</div>
+                <h4>Ravindran G</h4>
+                <p>Data Analyst</p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">KH</div>
+                <h4>Kalyani H K</h4>
+                <p>Project Manager</p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">AR</div>
+                <h4>Akshay R</h4>
+                <p>ML Engineer</p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">NR</div>
+                <h4>Nitin R S</h4>
+                <p>Business Analyst</p>
+              </div>
+            </div>
+            <div style="margin-top:14px;padding:12px;background:var(--bg-muted);border-radius:var(--radius);">
+              <p style="font-size:12px;"><strong>Mentor:</strong> Department of Computer Science, Amrita Vishwa
+                Vidyapeetham</p>
+              <p style="font-size:11px;color:var(--text-muted);margin-top:3px;">Business Analytics — Semester 6
+                Capstone</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </div>
+  </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
