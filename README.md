@@ -196,8 +196,6 @@ The project includes a **web-based BI dashboard** at `dashboard/index.html` with
 | Akshay R | ML Engineer |
 | Nitin R S | Business Analyst |
 
-**Mentor:** Department of Computer Science, Amrita Vishwa Vidyapeetham
-
 ---
 
 ## References
