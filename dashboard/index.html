@@ -94,25 +94,25 @@
               <div class="kpi-top">
                 <div class="kpi-icon blue"><i class="fas fa-car-side"></i></div>
               </div>
-              <div class="kpi-label">Total EV Sales</div>
-              <div class="kpi-value">14.2M</div>
-              <div class="kpi-change">+35% YoY</div>
+              <div class="kpi-label">Total EV Sales (2023)</div>
+              <div class="kpi-value">88.3M</div>
+              <div class="kpi-change">+33.9% YoY</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-top">
                 <div class="kpi-icon green"><i class="fas fa-arrow-trend-up"></i></div>
               </div>
               <div class="kpi-label">EV Growth Rate</div>
-              <div class="kpi-value">35.4%</div>
-              <div class="kpi-change">+8.2% vs 2022</div>
+              <div class="kpi-value">33.9%</div>
+              <div class="kpi-change">2022 → 2023</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-top">
                 <div class="kpi-icon amber"><i class="fas fa-charging-station"></i></div>
               </div>
-              <div class="kpi-label">Charging Stations</div>
-              <div class="kpi-value">2.7M</div>
-              <div class="kpi-change">+40% growth</div>
+              <div class="kpi-label">Charging Points</div>
+              <div class="kpi-value">96.2K</div>
+              <div class="kpi-change">10 countries tracked</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-top">
@@ -127,20 +127,20 @@
                 <div class="kpi-icon teal"><i class="fas fa-gauge-high"></i></div>
               </div>
               <div class="kpi-label">EV Readiness Score</div>
-              <div class="kpi-value">0.68</div>
-              <div class="kpi-change">Above average</div>
+              <div class="kpi-value">1.09</div>
+              <div class="kpi-change">survey_clean.csv avg</div>
             </div>
           </div>
 
           <div class="grid-2 mb-20">
             <div class="chart-card">
-              <h3>EV Sales Growth (2010–2024)</h3>
+              <h3>EV Sales Growth (2010–2023)</h3>
               <p class="chart-subtitle">Global electric vehicle sales trajectory</p>
               <div class="chart-container"><canvas id="overviewSalesChart"></canvas></div>
             </div>
             <div class="chart-card">
-              <h3>Top Regions by EV Adoption</h3>
-              <p class="chart-subtitle">Market share by geographic region</p>
+              <h3>Electric Vehicle Adoption by Region</h3>
+              <p class="chart-subtitle">Cumulative EV units (millions)</p>
               <div class="chart-container"><canvas id="overviewRegionsChart"></canvas></div>
             </div>
           </div>
@@ -166,8 +166,8 @@
               <div class="chart-container"><canvas id="trendsSalesChart"></canvas></div>
             </div>
             <div class="chart-card">
-              <h3>BEV vs PHEV Growth</h3>
-              <p class="chart-subtitle">Battery Electric vs Plug-in Hybrid adoption</p>
+              <h3>Global EV Adoption BEV vs PHEV</h3>
+              <p class="chart-subtitle">Cumulative fleet including 2025–2035 forecasts</p>
               <div class="chart-container"><canvas id="trendsBevPhevChart"></canvas></div>
             </div>
           </div>
@@ -231,10 +231,10 @@
           </div>
 
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
-            <div class="metric-badge blue"><i class="fas fa-heart"></i> Motivation Score: <strong>3.72</strong></div>
-            <div class="metric-badge red"><i class="fas fa-shield-halved"></i> Barrier Score: <strong>3.04</strong>
+            <div class="metric-badge blue"><i class="fas fa-heart"></i> Motivation Score: <strong>3.68</strong></div>
+            <div class="metric-badge red"><i class="fas fa-shield-halved"></i> Barrier Score: <strong>3.62</strong>
             </div>
-            <div class="metric-badge green"><i class="fas fa-gauge"></i> Readiness Score: <strong>0.68</strong></div>
+            <div class="metric-badge green"><i class="fas fa-gauge"></i> Readiness Score: <strong>1.09</strong></div>
           </div>
 
           <div class="grid-2 mb-20">
@@ -429,275 +429,272 @@
           </div>
         </section>
 
-      <!-- ═══ 7. MARKET GROWTH ═══ -->
-      <section class="page-section" id="section-time-series">
-        <div class="section-header">
-          <h2>Market Growth & Time-Series</h2>
-          <p>Longitudinal analysis of EV market expansion and growth rate dynamics</p>
-        </div>
-        <div class="grid-2 mb-20">
-          <div class="chart-card">
-            <h3>EV Sales Growth Trajectory</h3>
-            <p class="chart-subtitle">Year-over-year global EV sales (millions)</p>
-            <div class="chart-container"><canvas id="timeSeriesSalesChart"></canvas></div>
+        <!-- ═══ 7. MARKET GROWTH ═══ -->
+        <section class="page-section" id="section-time-series">
+          <div class="section-header">
+            <h2>Market Growth & Time-Series</h2>
+            <p>Longitudinal analysis of EV market expansion and growth rate dynamics</p>
           </div>
-          <div class="chart-card">
-            <h3>Growth Rate (% YoY)</h3>
-            <p class="chart-subtitle">Annual growth rate percentage</p>
-            <div class="chart-container"><canvas id="timeSeriesGrowthChart"></canvas></div>
-          </div>
-        </div>
-        <div class="chart-card mb-20">
-          <h3>Multi-Factor Trend Analysis</h3>
-          <p class="chart-subtitle">EV Sales vs Charging Infrastructure vs EV Stock (indexed, 2015 = 100)</p>
-          <div class="chart-container tall"><canvas id="timeSeriesMultiChart"></canvas></div>
-        </div>
-        <div class="insight-box">
-          <h4>Market Insight</h4>
-          <p>The EV market entered a decisive acceleration phase post-2020, transitioning from early adoption to
-            mass-market growth. Growth rates peaked at over 100% in 2021 before normalizing to 35–40% as the market
-            matures. Infrastructure expansion consistently precedes adoption surges.</p>
-        </div>
-      </section>
-
-      <!-- ═══ 8. FINANCIAL SIGNALS ═══ -->
-      <section class="page-section" id="section-financial">
-        <div class="section-header">
-          <h2>Financial Market Signals</h2>
-          <p>EV company stock performance and market correlation analysis</p>
-        </div>
-        <div class="grid-2 mb-20">
-          <div class="chart-card">
-            <h3>EV Company Stock Price Trends</h3>
-            <p class="chart-subtitle">Normalized stock performance of major EV manufacturers</p>
-            <div class="chart-container tall"><canvas id="financialStockChart"></canvas></div>
-          </div>
-          <div class="chart-card">
-            <h3>EV Sales vs Stock Performance</h3>
-            <p class="chart-subtitle">Scatter analysis of market vs sales correlation</p>
-            <div class="chart-container tall"><canvas id="financialScatterChart"></canvas></div>
-          </div>
-        </div>
-        <div class="kpi-card mb-20" style="text-align:center;padding:24px;">
-          <div class="kpi-label">Correlation Score (EV Sales ↔ Stock Returns)</div>
-          <div class="kpi-value" style="font-size:40px;color:var(--accent);">+0.78</div>
-          <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">Strong positive correlation between EV
-            adoption metrics and manufacturer stock performance</p>
-        </div>
-        <div class="insight-box">
-          <h4>Financial Insight</h4>
-          <p>EV market growth is positively correlated with stock market performance of EV manufacturers (r = +0.78).
-            Tesla led the sector with peak valuations in 2021, while traditional automakers' EV divisions have shown
-            increasing investor confidence. Market sentiment leads actual sales data by 6–12 months.</p>
-        </div>
-      </section>
-
-      <!-- ═══ 9. BUSINESS INSIGHTS ═══ -->
-      <section class="page-section" id="section-recommendations">
-        <div class="section-header">
-          <h2>Business Insights & Recommendations</h2>
-          <p>Strategic recommendations for key stakeholders based on data-driven analysis</p>
-        </div>
-
-        <!-- Summary KPIs -->
-        <div class="grid-4 mb-20">
-          <div class="kpi-card">
-            <div class="kpi-label">Stakeholder Groups</div>
-            <div class="kpi-value">4</div>
-            <div class="kpi-change">Targeted recommendations</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Data Sources Analyzed</div>
-            <div class="kpi-value">7</div>
-            <div class="kpi-change">Cross-validated insights</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Key Correlations Found</div>
-            <div class="kpi-value">12</div>
-            <div class="kpi-change">Statistically significant</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Action Items</div>
-            <div class="kpi-value">16</div>
-            <div class="kpi-change">Across all stakeholders</div>
-          </div>
-        </div>
-
-        <div class="grid-2 mb-20">
-          <div class="rec-card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-              <div class="rec-icon" style="background:var(--primary-soft);color:var(--primary);margin-bottom:0;"><i
-                  class="fas fa-industry"></i></div>
-              <span class="metric-badge blue">High Priority</span>
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>EV Sales Growth Trajectory</h3>
+              <p class="chart-subtitle">Year-over-year global EV sales (millions)</p>
+              <div class="chart-container"><canvas id="timeSeriesSalesChart"></canvas></div>
             </div>
-            <h4>For Manufacturers</h4>
-            <p class="rec-insight"><strong>Insight:</strong> BEVs dominate sales growth, and consumers prioritize
-              range, charging convenience, and total cost of ownership. Price-sensitive segments (Cluster 2) represent
-              the largest untapped market at ~35% of survey respondents.</p>
-            <div class="rec-action">
-              <strong>Recommended Actions:</strong>
-              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
-                <li>Develop affordable BEV models targeting the $25K–$35K range</li>
-                <li>Invest in solid-state battery R&D to address range concerns</li>
-                <li>Offer flexible financing and subscription models to lower entry barriers</li>
-                <li>Launch targeted marketing for Cluster 2 (price-sensitive) and Cluster 3 (infra-constrained)
-                  segments</li>
+            <div class="chart-card">
+              <h3>Growth Rate (% YoY)</h3>
+              <p class="chart-subtitle">Annual growth rate percentage</p>
+              <div class="chart-container"><canvas id="timeSeriesGrowthChart"></canvas></div>
+            </div>
+          </div>
+          <div class="chart-card mb-20">
+            <h3>Multi-Factor Trend Analysis</h3>
+            <p class="chart-subtitle">EV Sales vs Charging Infrastructure vs EV Stock (indexed, 2015 = 100)</p>
+            <div class="chart-container tall"><canvas id="timeSeriesMultiChart"></canvas></div>
+          </div>
+          <div class="insight-box">
+            <h4>Market Insight</h4>
+            <p>The EV market entered a decisive acceleration phase post-2020, transitioning from early adoption to
+              mass-market growth. Growth rates peaked at over 100% in 2021 before normalizing to 35–40% as the market
+              matures. Infrastructure expansion consistently precedes adoption surges.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 8. FINANCIAL SIGNALS ═══ -->
+        <section class="page-section" id="section-financial">
+          <div class="section-header">
+            <h2>Financial Market Signals</h2>
+            <p>EV company stock performance and market correlation analysis</p>
+          </div>
+          <div class="grid-2 mb-20">
+            <div class="chart-card">
+              <h3>EV Company Stock Price Trends</h3>
+              <p class="chart-subtitle">Normalized stock performance of major EV manufacturers</p>
+              <div class="chart-container tall"><canvas id="financialStockChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>EV Sales vs Stock Performance</h3>
+              <p class="chart-subtitle">Scatter analysis of market vs sales correlation</p>
+              <div class="chart-container tall"><canvas id="financialScatterChart"></canvas></div>
+            </div>
+          </div>
+          <div class="kpi-card mb-20" style="text-align:center;padding:24px;">
+            <div class="kpi-label">Correlation Score (EV Sales ↔ Stock Returns)</div>
+            <div class="kpi-value" style="font-size:40px;color:var(--accent);">+0.78</div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">Strong positive correlation between EV
+              adoption metrics and manufacturer stock performance</p>
+          </div>
+          <div class="insight-box">
+            <h4>Financial Insight</h4>
+            <p>EV market growth is positively correlated with stock market performance of EV manufacturers (r = +0.78).
+              Tesla led the sector with peak valuations in 2021, while traditional automakers' EV divisions have shown
+              increasing investor confidence. Market sentiment leads actual sales data by 6–12 months.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 9. BUSINESS INSIGHTS ═══ -->
+        <section class="page-section" id="section-recommendations">
+          <div class="section-header">
+            <h2>Business Insights & Recommendations</h2>
+            <p>Strategic recommendations for key stakeholders based on data-driven analysis</p>
+          </div>
+
+          <!-- Summary KPIs -->
+          <div class="grid-4 mb-20">
+            <div class="kpi-card">
+              <div class="kpi-label">Stakeholder Groups</div>
+              <div class="kpi-value">4</div>
+              <div class="kpi-change">Targeted recommendations</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Data Sources Analyzed</div>
+              <div class="kpi-value">6</div>
+              <div class="kpi-change">Cross-validated insights</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Key Correlations Found</div>
+              <div class="kpi-value">12</div>
+              <div class="kpi-change">Statistically significant</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Action Items</div>
+              <div class="kpi-value">16</div>
+              <div class="kpi-change">Across all stakeholders</div>
+            </div>
+          </div>
+
+          <div class="grid-2 mb-20">
+            <div class="rec-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                <div class="rec-icon" style="background:var(--primary-soft);color:var(--primary);margin-bottom:0;"><i
+                    class="fas fa-industry"></i></div>
+                <span class="metric-badge blue">High Priority</span>
+              </div>
+              <h4>For Manufacturers</h4>
+              <p class="rec-insight"><strong>Insight:</strong> BEVs dominate sales growth, and consumers prioritize
+                range, charging convenience, and total cost of ownership. Price-sensitive segments (Cluster 2) represent
+                the largest untapped market at ~35% of survey respondents.</p>
+              <div class="rec-action">
+                <strong>Recommended Actions:</strong>
+                <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                  <li>Develop affordable BEV models targeting the $25K–$35K range</li>
+                  <li>Invest in solid-state battery R&D to address range concerns</li>
+                  <li>Offer flexible financing and subscription models to lower entry barriers</li>
+                  <li>Launch targeted marketing for Cluster 2 (price-sensitive) and Cluster 3 (infra-constrained)
+                    segments</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rec-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                <div class="rec-icon" style="background:var(--accent-soft);color:var(--accent);margin-bottom:0;"><i
+                    class="fas fa-landmark"></i></div>
+                <span class="metric-badge green">High Priority</span>
+              </div>
+              <h4>For Governments</h4>
+              <p class="rec-insight"><strong>Insight:</strong> Government incentives are the second-strongest predictor
+                of adoption (importance = 0.156). Countries with comprehensive policy frameworks show 2–3× higher
+                adoption rates than peers.</p>
+              <div class="rec-action">
+                <strong>Recommended Actions:</strong>
+                <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                  <li>Extend purchase subsidies and tax credits beyond 2030</li>
+                  <li>Mandate EV-ready building codes for new construction</li>
+                  <li>Invest in public charging infrastructure with focus on rural corridors</li>
+                  <li>Set clear ICE phase-out timelines to drive industry planning</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rec-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                <div class="rec-icon" style="background:var(--purple-soft);color:var(--purple);margin-bottom:0;"><i
+                    class="fas fa-chart-pie"></i></div>
+                <span class="metric-badge">Medium Priority</span>
+              </div>
+              <h4>For Investors</h4>
+              <p class="rec-insight"><strong>Insight:</strong> EV stock performance correlates strongly (r = +0.78) with
+                adoption metrics. Battery and charging infrastructure companies show emerging value with market
+                sentiment leading sales data by 6–12 months.</p>
+              <div class="rec-action">
+                <strong>Recommended Actions:</strong>
+                <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                  <li>Diversify beyond vehicle OEMs into battery supply chain and charging networks</li>
+                  <li>Monitor infrastructure deployment rates as a leading indicator of adoption</li>
+                  <li>Consider EV software platforms and grid integration companies</li>
+                  <li>Track government policy changes as early signals for market shifts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rec-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                <div class="rec-icon" style="background:var(--warning-soft);color:var(--warning);margin-bottom:0;"><i
+                    class="fas fa-plug"></i></div>
+                <span class="metric-badge blue">High Priority</span>
+              </div>
+              <h4>For Infrastructure Companies</h4>
+              <p class="rec-insight"><strong>Insight:</strong> Charging infrastructure is the #1 predictor of EV
+                adoption (importance = 0.182). Current vehicle-to-charger ratio of 6.2:1 is improving but gaps remain in
+                suburban and rural corridors.</p>
+              <div class="rec-action">
+                <strong>Recommended Actions:</strong>
+                <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
+                  <li>Prioritize highway corridor fast-charging (150kW+) networks</li>
+                  <li>Partner with retail and hospitality chains for destination charging</li>
+                  <li>Invest in smart grid integration and V2G (Vehicle-to-Grid) capabilities</li>
+                  <li>Target underserved suburban and rural areas for maximum adoption impact</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <h4>Strategic Outlook</h4>
+            <p>The transition to electric mobility is at a critical inflection point. Our analysis across 7 datasets and
+              325 survey respondents shows that the top 3 adoption drivers — infrastructure availability, government
+              incentives, and cost savings — are all addressable through coordinated stakeholder action. Markets that
+              align policy, infrastructure, and product strategies are poised to reach mass adoption (>30% penetration)
+              within the next 5 years.</p>
+          </div>
+        </section>
+
+        <!-- ═══ 10. ABOUT ═══ -->
+        <section class="page-section" id="section-about">
+          <div class="section-header">
+            <h2>About This Project</h2>
+            <p>Project overview, methodology, data sources, and team</p>
+          </div>
+          <div class="grid-2 mb-20">
+            <div class="about-card">
+              <h3><i class="fas fa-file-lines" style="color:var(--primary);"></i> Project Description</h3>
+              <p>This capstone project analyzes <strong>global electric vehicle (EV) adoption, market performance,
+                  charging infrastructure readiness, and financial market signals</strong>. It combines secondary
+                datasets from reliable public sources with primary survey data to derive actionable business insights.
+              </p>
+              <p style="margin-top:10px;">Research title: <strong>"EV Market Dynamics: Analyzing Consumer Trends and
+                  Financial Signals"</strong></p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-database" style="color:var(--accent);"></i> Datasets Used</h3>
+              <ul>
+                <li>IEA Global EV Data Explorer</li>
+                <li>U.S. Electric Vehicle Population Data (data.gov)</li>
+                <li>Open Charge Map — Charging Infrastructure</li>
+                <li>Opendatabay — Consumer EV Adoption Dataset</li>
+                <li>Global EV Sales Dataset (2010–2024)</li>
+                <li>Primary Survey (Google Forms, 325 responses)</li>
               </ul>
             </div>
           </div>
-          <div class="rec-card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-              <div class="rec-icon" style="background:var(--accent-soft);color:var(--accent);margin-bottom:0;"><i
-                  class="fas fa-landmark"></i></div>
-              <span class="metric-badge green">High Priority</span>
-            </div>
-            <h4>For Governments</h4>
-            <p class="rec-insight"><strong>Insight:</strong> Government incentives are the second-strongest predictor
-              of adoption (importance = 0.156). Countries with comprehensive policy frameworks show 2–3× higher
-              adoption rates than peers.</p>
-            <div class="rec-action">
-              <strong>Recommended Actions:</strong>
-              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
-                <li>Extend purchase subsidies and tax credits beyond 2030</li>
-                <li>Mandate EV-ready building codes for new construction</li>
-                <li>Invest in public charging infrastructure with focus on rural corridors</li>
-                <li>Set clear ICE phase-out timelines to drive industry planning</li>
+          <div class="grid-2 mb-20">
+            <div class="about-card">
+              <h3><i class="fas fa-flask" style="color:var(--purple);"></i> Methodologies</h3>
+              <ul>
+                <li><strong>K-Means Clustering</strong> — Consumer segmentation into 4 distinct clusters</li>
+                <li><strong>Random Forest Classification</strong> — Identifying key drivers of EV adoption</li>
+                <li><strong>Time-Series Analysis</strong> — Forecasting EV market growth trends</li>
+                <li><strong>Correlation & Regression</strong> — EV sales vs. financial market signals</li>
+                <li><strong>Bootstrap Sampling</strong> — Augmenting survey data for statistical robustness</li>
               </ul>
             </div>
-          </div>
-          <div class="rec-card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-              <div class="rec-icon" style="background:var(--purple-soft);color:var(--purple);margin-bottom:0;"><i
-                  class="fas fa-chart-pie"></i></div>
-              <span class="metric-badge">Medium Priority</span>
-            </div>
-            <h4>For Investors</h4>
-            <p class="rec-insight"><strong>Insight:</strong> EV stock performance correlates strongly (r = +0.78) with
-              adoption metrics. Battery and charging infrastructure companies show emerging value with market
-              sentiment leading sales data by 6–12 months.</p>
-            <div class="rec-action">
-              <strong>Recommended Actions:</strong>
-              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
-                <li>Diversify beyond vehicle OEMs into battery supply chain and charging networks</li>
-                <li>Monitor infrastructure deployment rates as a leading indicator of adoption</li>
-                <li>Consider EV software platforms and grid integration companies</li>
-                <li>Track government policy changes as early signals for market shifts</li>
-              </ul>
-            </div>
-          </div>
-          <div class="rec-card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-              <div class="rec-icon" style="background:var(--warning-soft);color:var(--warning);margin-bottom:0;"><i
-                  class="fas fa-plug"></i></div>
-              <span class="metric-badge blue">High Priority</span>
-            </div>
-            <h4>For Infrastructure Companies</h4>
-            <p class="rec-insight"><strong>Insight:</strong> Charging infrastructure is the #1 predictor of EV
-              adoption (importance = 0.182). Current vehicle-to-charger ratio of 6.2:1 is improving but gaps remain in
-              suburban and rural corridors.</p>
-            <div class="rec-action">
-              <strong>Recommended Actions:</strong>
-              <ul style="margin:6px 0 0 16px;font-size:12.5px;line-height:1.7;">
-                <li>Prioritize highway corridor fast-charging (150kW+) networks</li>
-                <li>Partner with retail and hospitality chains for destination charging</li>
-                <li>Invest in smart grid integration and V2G (Vehicle-to-Grid) capabilities</li>
-                <li>Target underserved suburban and rural areas for maximum adoption impact</li>
-              </ul>
+            <div class="about-card">
+              <h3><i class="fas fa-users" style="color:var(--warning);"></i> Team Members</h3>
+              <div class="team-grid">
+                <div class="team-member">
+                  <div class="member-avatar">AG</div>
+                  <h4>Anantha Ram G S</h4>
+                  <p>Data Engineer</p>
+                </div>
+                <div class="team-member">
+                  <div class="member-avatar">RG</div>
+                  <h4>Ravindran G</h4>
+                  <p>Data Analyst</p>
+                </div>
+                <div class="team-member">
+                  <div class="member-avatar">KH</div>
+                  <h4>Kalyani H K</h4>
+                  <p>Project Manager</p>
+                </div>
+                <div class="team-member">
+                  <div class="member-avatar">AR</div>
+                  <h4>Akshay R</h4>
+                  <p>ML Engineer</p>
+                </div>
+                <div class="team-member">
+                  <div class="member-avatar">NR</div>
+                  <h4>Nitin R S</h4>
+                  <p>Business Analyst</p>
+                </div>
+              </div>
+              <div style="margin-top:14px;padding:12px;background:var(--bg-muted);border-radius:var(--radius);">
+                <p style="font-size:11px;color:var(--text-muted);margin-top:3px;">Business Analytics — Semester 6
+                  Capstone</p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="insight-box">
-          <h4>Strategic Outlook</h4>
-          <p>The transition to electric mobility is at a critical inflection point. Our analysis across 7 datasets and
-            325 survey respondents shows that the top 3 adoption drivers — infrastructure availability, government
-            incentives, and cost savings — are all addressable through coordinated stakeholder action. Markets that
-            align policy, infrastructure, and product strategies are poised to reach mass adoption (>30% penetration)
-            within the next 5 years.</p>
-        </div>
-      </section>
-
-      <!-- ═══ 10. ABOUT ═══ -->
-      <section class="page-section" id="section-about">
-        <div class="section-header">
-          <h2>About This Project</h2>
-          <p>Project overview, methodology, data sources, and team</p>
-        </div>
-        <div class="grid-2 mb-20">
-          <div class="about-card">
-            <h3><i class="fas fa-file-lines" style="color:var(--primary);"></i> Project Description</h3>
-            <p>This capstone project analyzes <strong>global electric vehicle (EV) adoption, market performance,
-                charging infrastructure readiness, and financial market signals</strong>. It combines secondary
-              datasets from reliable public sources with primary survey data to derive actionable business insights.
-            </p>
-            <p style="margin-top:10px;">Research title: <strong>"EV Market Dynamics: Analyzing Consumer Trends and
-                Financial Signals"</strong></p>
-          </div>
-          <div class="about-card">
-            <h3><i class="fas fa-database" style="color:var(--accent);"></i> Datasets Used</h3>
-            <ul>
-              <li>IEA Global EV Data Explorer</li>
-              <li>U.S. Electric Vehicle Population Data (data.gov)</li>
-              <li>Open Charge Map — Charging Infrastructure</li>
-              <li>Opendatabay — Consumer EV Adoption Dataset</li>
-              <li>Global EV Sales Dataset (2010–2024)</li>
-              <li>Mendeley EV Adoption Survey Dataset</li>
-              <li>Primary Survey (Google Forms, 325 responses)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="grid-2 mb-20">
-          <div class="about-card">
-            <h3><i class="fas fa-flask" style="color:var(--purple);"></i> Methodologies</h3>
-            <ul>
-              <li><strong>K-Means Clustering</strong> — Consumer segmentation into 4 distinct clusters</li>
-              <li><strong>Random Forest Classification</strong> — Identifying key drivers of EV adoption</li>
-              <li><strong>Time-Series Analysis</strong> — Forecasting EV market growth trends</li>
-              <li><strong>Correlation & Regression</strong> — EV sales vs. financial market signals</li>
-              <li><strong>Bootstrap Sampling</strong> — Augmenting survey data for statistical robustness</li>
-            </ul>
-          </div>
-          <div class="about-card">
-            <h3><i class="fas fa-users" style="color:var(--warning);"></i> Team Members</h3>
-            <div class="team-grid">
-              <div class="team-member">
-                <div class="member-avatar">AG</div>
-                <h4>Anantha Ram G S</h4>
-                <p>Data Engineer</p>
-              </div>
-              <div class="team-member">
-                <div class="member-avatar">RG</div>
-                <h4>Ravindran G</h4>
-                <p>Data Analyst</p>
-              </div>
-              <div class="team-member">
-                <div class="member-avatar">KH</div>
-                <h4>Kalyani H K</h4>
-                <p>Project Manager</p>
-              </div>
-              <div class="team-member">
-                <div class="member-avatar">AR</div>
-                <h4>Akshay R</h4>
-                <p>ML Engineer</p>
-              </div>
-              <div class="team-member">
-                <div class="member-avatar">NR</div>
-                <h4>Nitin R S</h4>
-                <p>Business Analyst</p>
-              </div>
-            </div>
-            <div style="margin-top:14px;padding:12px;background:var(--bg-muted);border-radius:var(--radius);">
-              <p style="font-size:12px;"><strong>Mentor:</strong> Department of Computer Science, Amrita Vishwa
-                Vidyapeetham</p>
-              <p style="font-size:11px;color:var(--text-muted);margin-top:3px;">Business Analytics — Semester 6
-                Capstone</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-  </div>
-  </main>
+      </div>
+    </main>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
